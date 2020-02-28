@@ -1,0 +1,28 @@
+spring:
+  application:
+    # 应用名称
+    name: nacos-spring-cloud-getway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.99.100:8848
+
+    # 使用 Sentinel 作为熔断器
+    sentinel:
+      transport:
+        dashboard: 192.168.99.100:8858
+
+    # 路由网关配置
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+server:
+  port: 9000
+
+# 配置日志级别，方别调试
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

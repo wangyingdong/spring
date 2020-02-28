@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: user-service-consumer
+server:
+  port: 7080
+
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: zookeeper://zookeeper:2181

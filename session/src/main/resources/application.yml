@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: session
+  redis:
+    host: redis
+    password: 123456
+    port: 6379
+  session:
+    store-type: redis   #设置session保存为默认redis的方式
+    redis:
+      namespace: com.f139.session
+server:
+  port: 7085
