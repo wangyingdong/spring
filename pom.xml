@@ -31,6 +31,7 @@
         <module>starter</module>
         <module>aop</module>
         <module>mybatis</module>
+        <module>token</module>
     </modules>
 
 
