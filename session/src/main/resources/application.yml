@@ -10,4 +10,4 @@ spring:
     redis:
       namespace: com.f139.session
 server:
-  port: 7085
+  port: 0
