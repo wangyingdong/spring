@@ -3,6 +3,7 @@ package com.f139.rocketmq.listener;
 
 import com.alibaba.fastjson.JSON;
 import com.f139.rocketmq.pojo.Order;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.common.UtilAll;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
@@ -13,12 +14,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RocketMQMessageListener(topic = "message", consumerGroup = "message-group-sync",selectorExpression = "sync")
+@Slf4j
 public class MessageSyncListener implements RocketMQListener<Order>, RocketMQPushConsumerLifecycleListener {
 
 
     @Override
     public void onMessage(Order message) {
-        System.out.println(String.format("------- MessageExtConsumer received message, body:%s ", JSON.toJSON(message)));
+        log.info("MessageSyncListener received message, body:{} ", JSON.toJSON(message));
     }
 
     @Override
