@@ -3,14 +3,12 @@ package com.f139.provider.service;
 import com.f139.impl.UserService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
 
 
-@Service //dubbo
-@Component
+@Service(version = "1.0.0")
 public class UserServiceImpl implements UserService {
 
     @Value("${dubbo.application.name}")

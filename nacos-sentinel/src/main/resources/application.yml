@@ -4,23 +4,19 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.99.100:8848
-
-    # 使用 Sentinel 作为熔断器
+        server-addr: nacos:8848
     sentinel:
       transport:
-        dashboard: 192.168.99.100:8858
+        dashboard: sentinel:8858
 
 server:
-  port: 9093
+  port: 0
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-
-
 feign:
   sentinel:
     enabled: true

@@ -1,13 +1,13 @@
 spring:
   application:
     name: user-service-provider
-
 dubbo:
   registry:
-    address: zookeeper:2181
-    protocol: zookeeper
+    address: zookeeper://zookeeper:2181
+  protocol:
+    port: -1
+    name: dubbo
+  scan:
+    base-packages: com.f139.provider.service
   application:
     name: ${spring.application.name}
-  protocol:
-    port: 20880
-    name: dubbo

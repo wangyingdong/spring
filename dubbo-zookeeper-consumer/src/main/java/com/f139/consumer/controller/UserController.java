@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    @Reference
+    @Reference(version = "1.0.0")
     private UserService userService;
 
 
