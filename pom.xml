@@ -19,10 +19,6 @@
         <module>webflux</module>
         <module>netty</module>
         <module>security</module>
-        <module>eureka-server</module>
-        <module>eureka-feign</module>
-        <module>eureka-client</module>
-        <module>eureka-zuul</module>
         <module>nacos-provider</module>
         <module>nacos-consumer</module>
         <module>nacos-consumer-feign</module>
@@ -40,11 +36,10 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
-        <dubbo.version>2.7.1</dubbo.version>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-        <spring-cloud.alibaba.version>0.9.0.RELEASE</spring-cloud.alibaba.version>
-        <rocketmq.spring.boot.version>2.0.4-SNAPSHOT</rocketmq.spring.boot.version>
+        <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
+        <dubbo.version>2.7.5</dubbo.version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <spring-cloud.alibaba.version>2.1.1.RELEASE</spring-cloud.alibaba.version>
     </properties>
 
 
@@ -69,14 +64,13 @@
             </dependency>
 
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
+                <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>${spring-cloud.alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
-            <!-- Aapche Dubbo  -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-dependencies-bom</artifactId>
@@ -85,28 +79,12 @@
                 <scope>import</scope>
             </dependency>
 
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>${dubbo.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>servlet-api</artifactId>
-                    </exclusion>
 
-                </exclusions>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
 
-        <!-- Dubbo Spring Boot Starter -->
 
 
         <dependency>
@@ -154,6 +132,25 @@
             <id>jboss-releases-repository</id>
             <name>JBoss Releases Repository</name>
             <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <repository>
+            <id>apache.snapshots.https</id>
+            <name>Apache Development Snapshot Repository</name>
+            <url>https://repository.apache.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
