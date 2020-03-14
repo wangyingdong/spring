@@ -23,7 +23,7 @@
         <module>nacos-consumer</module>
         <module>nacos-consumer-feign</module>
         <module>nacos-sentinel</module>
-        <module>nacos-spring-cloud-getway</module>
+        <module>nacos-sentinel-spring-cloud-gateway</module>
         <module>starter</module>
         <module>aop</module>
         <module>mybatis</module>

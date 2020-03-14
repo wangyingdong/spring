@@ -1,6 +1,6 @@
 spring:
   application:
-    name: nacos-spring-cloud-gateway
+    name: nacos-sentinel-spring-cloud-gateway
   cloud:
     nacos:
       discovery:

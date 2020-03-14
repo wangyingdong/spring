@@ -13,6 +13,6 @@ public class SentineFeignController {
 
     @GetMapping(value = "/echo/hi")
     public String echo() {
-        return echoService.echo("Hi Feign");
+        return echoService.echo("Hi Sentine Feign");
     }
 }

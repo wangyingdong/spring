@@ -5,7 +5,9 @@ spring:
     nacos:
       discovery:
         server-addr: nacos:8848
-
+    sentinel:
+      transport:
+        dashboard: sentinel:8858
 server:
   port: 0
 
