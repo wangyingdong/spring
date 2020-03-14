@@ -12,22 +12,22 @@
         <module>dubbo-zookeeper-provider</module>
         <module>dubbo-zookeeper-consumer</module>
         <module>dobbo-zookeeper-interface</module>
-        <module>rocketmq</module>
-        <module>redis</module>
-        <module>session</module>
-        <module>websocket</module>
-        <module>webflux</module>
-        <module>netty</module>
-        <module>security</module>
+        <module>spring-boot-starter</module>
+        <module>spring-boot-aop</module>
+        <module>spring-boot-mybatis</module>
+        <module>spring-boot-token</module>
+        <module>spring-boot-rocketmq</module>
+        <module>spring-boot-redis</module>
+        <module>spring-boot-session</module>
+        <module>spring-boot-websocket</module>
+        <module>spring-boot-webflux</module>
+        <module>spring-boot-netty</module>
+        <module>spring-boot-security</module>
         <module>nacos-provider</module>
         <module>nacos-consumer</module>
         <module>nacos-consumer-feign</module>
         <module>nacos-sentinel</module>
         <module>nacos-sentinel-spring-cloud-gateway</module>
-        <module>starter</module>
-        <module>aop</module>
-        <module>mybatis</module>
-        <module>token</module>
     </modules>
 
 

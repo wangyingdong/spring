@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mybatis</artifactId>
+    <artifactId>spring-boot-mybatis</artifactId>
 
 
     <dependencies>
@@ -20,7 +20,6 @@
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
@@ -28,7 +27,6 @@
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -37,20 +35,17 @@
         </dependency>
 
 
-        <!--mybatis-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>1.3.1</version>
         </dependency>
-        <!--mapper-->
-        <!-- https://mvnrepository.com/artifact/tk.mybatis/mapper-spring-boot-starter -->
+
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
             <version>2.0.0</version>
         </dependency>
-        <!--pagehelper-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
@@ -62,10 +57,20 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgument>-parameters</compilerArgument>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.7</version>
-
                 <configuration>
                     <configurationFile>${project.basedir}/src/main/resources/mybatis-generator.xml</configurationFile>
                     <overwrite>false</overwrite>

@@ -3,6 +3,7 @@ package com.spring.mybatis.entity;
 import javax.persistence.*;
 
 import com.spring.mybatis.handler.AddressTypeHandler;
+import com.spring.mybatis.handler.SexTypeHandler;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -37,10 +38,11 @@ public class User {
     @Transient ///数据库表中不存在的字段
     private String readonly;
 
+    @Transient ///数据库表中不存在的字段
     @ColumnType(typeHandler = AddressTypeHandler.class)
     private Address address;
 
-    //@ColumnType(typeHandler = EnumTypeHandler.class)
-    @Column
+    @Transient ///数据库表中不存在的字段
+    @ColumnType(typeHandler = SexTypeHandler.class)
     private Sex sex;
 }
