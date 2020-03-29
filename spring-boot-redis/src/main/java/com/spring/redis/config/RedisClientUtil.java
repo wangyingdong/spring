@@ -1,17 +1,13 @@
-package com.f139.redis.config;
+package com.spring.redis.config;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
-import org.apache.commons.collections.CollectionUtils;
+
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /**
  * reids 客户端工具类
@@ -20,8 +16,15 @@ import org.apache.commons.collections.CollectionUtils;
 @Component
 public class RedisClientUtil {
 
+
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
+
+
+    public Boolean setIfAbsent(String key, String value) {
+        Boolean result = redisTemplate.opsForValue().setIfAbsent(key, value, 10, TimeUnit.SECONDS);
+        return result;
+    }
 
 
     public Object getVal(String key) {

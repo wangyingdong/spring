@@ -12,7 +12,6 @@
         <module>dubbo-zookeeper-provider</module>
         <module>dubbo-zookeeper-consumer</module>
         <module>dobbo-zookeeper-interface</module>
-        <module>spring-boot-starter</module>
         <module>spring-boot-aop</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-token</module>
