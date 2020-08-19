@@ -4,10 +4,15 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
+import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+
+import static java.util.Collections.EMPTY_LIST;
 
 /**
  * reids 客户端工具类
@@ -101,5 +106,16 @@ public class RedisClientUtil {
 
     public boolean hasKey(String key) {
         return redisTemplate.hasKey(key);
+    }
+
+
+    protected RedisScript<Long> getRedisLockScript() {
+        String script = "local key = ARGV[1];local expiration = ARGV[2];local value = 1;";
+        script += "if redis.call('EXISTS', key) == 1 then return -1 else redis.call('SET', key, value);redis.call('EXPIRE', key, expiration);return 1;end";
+        return new DefaultRedisScript<>(script, Long.class);
+    }
+
+    public boolean tryLock(String key, long timeout) {
+        return redisTemplate.execute(getRedisLockScript(), EMPTY_LIST, key, timeout) == 1;
     }
 }

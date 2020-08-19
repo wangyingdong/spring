@@ -50,4 +50,9 @@ public class StockController {
     }
 
 
+    @RequestMapping("/lock")
+    public void lock(@RequestParam("id") Integer id) {
+        redisClientUtil.tryLock("lock", 1000);
+    }
+
 }
