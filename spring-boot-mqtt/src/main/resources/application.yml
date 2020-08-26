@@ -1,0 +1,12 @@
+spring:
+  mqtt:
+    username:
+    password:
+    host-url:
+      - tcp://192.168.99.99:1883
+    sender-client-id: mqttId-sender-${random.value}
+    receiver-client-id: mqttId-receiver-${random.value}
+    default-topic: topic
+    connection-timeout: 10
+server:
+  port: 8081
