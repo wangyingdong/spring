@@ -27,6 +27,7 @@
         <module>nacos-consumer-feign</module>
         <module>nacos-sentinel</module>
         <module>nacos-sentinel-spring-cloud-gateway</module>
+        <module>spring-boot-mqtt</module>
     </modules>
 
 
