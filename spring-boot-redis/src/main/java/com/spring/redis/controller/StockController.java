@@ -1,6 +1,7 @@
 package com.spring.redis.controller;
 
 
+import com.spring.redis.ratelimter.AccessLimiter;
 import com.spring.redis.config.RedisClientUtil;
 import com.spring.redis.entity.Product;
 import com.spring.redis.service.IProductService;
@@ -27,6 +28,22 @@ public class StockController {
 
     @Autowired
     IProductService productService;
+
+    @Autowired
+    AccessLimiter accessLimiter;
+
+    @RequestMapping("limit")
+    public String limit() {
+        accessLimiter.limiter("rateLimit", 1);
+        return "success";
+    }
+
+    // 主要配置扫包的路径
+    @RequestMapping("limitAnntation")
+    @com.spring.redis.ratelimter.annotation.AccessLimiter(limit = 1)
+    public String limitAnntation() {
+        return "success";
+    }
 
     @RequestMapping("/miaosha")
     public Product miaosha(@RequestParam("id") Integer id) {
