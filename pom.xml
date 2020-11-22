@@ -17,6 +17,7 @@
         <module>spring-boot-token</module>
         <module>spring-boot-rocketmq</module>
         <module>spring-boot-redis</module>
+        <module>spring-boot-redis-ratelimiter</module>
         <module>spring-boot-session</module>
         <module>spring-boot-websocket</module>
         <module>spring-boot-webflux</module>
