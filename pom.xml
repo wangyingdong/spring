@@ -29,6 +29,7 @@
         <module>nacos-sentinel</module>
         <module>nacos-sentinel-spring-cloud-gateway</module>
         <module>spring-boot-mqtt</module>
+        <module>spring-boot-admin</module>
     </modules>
 
 
@@ -41,6 +42,7 @@
         <dubbo.version>2.7.5</dubbo.version>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         <spring-cloud.alibaba.version>2.1.1.RELEASE</spring-cloud.alibaba.version>
+        <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
     </properties>
 
 
@@ -81,6 +83,15 @@
             </dependency>
 
 
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 
@@ -105,6 +116,10 @@
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
 
         <dependency>

@@ -29,7 +29,22 @@ spring:
       filters: stat
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       use-global-data-source-stat: true
+  boot:
+    admin:
+      client:
+        url: http://localhost:8899
+        instance:
+          name: ${spring.application.name}
 mybatis:
   mapper-locations: '*/**/*Mapper.xml'
 server:
   port: 8081
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
