@@ -12,6 +12,12 @@
     <artifactId>spring-boot-redis</artifactId>
 
     <dependencies>
+
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.f139</groupId>
             <artifactId>spring-boot-redis-ratelimiter</artifactId>
